@@ -9,6 +9,10 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
+//is217hw3
+var is217hw3 = require('./routes/is217hw3'); 
+
+
 var app = express();
 
 // all environments
@@ -30,6 +34,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+//is217hw3 page
+app.get('/is217hw3', is217hw3.index); 
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
