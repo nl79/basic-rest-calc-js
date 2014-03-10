@@ -5,3 +5,15 @@ block content
   p Welcome to #{title}
   #divCalculator
    h2 Calculator
+   #divCalc.divCalc
+    form(id='formCalc' action='/is217hw3' method='post')
+      span Enter 2 Numbers and Select the operation
+      br
+      input(type='text', id='inputNum1', name='num1')
+      select(name='operator')
+       option(value='add') Add
+       option(value='sub') Subtract
+       option(value='mult') Multiply
+       option(value='div') Divide
+      input(type='text', id='inputNum2', name='num2')
+      input(type='submit', id='inputSubmit' name='inputSubmit', value='Calculate')

@@ -3,17 +3,18 @@
  */
 
 //import the calculator module and print out some results.
-require('../lib/calculator.js'); 
+//require('../javascripts/lib/calculator.js'); 
 
 exports.index = function(req, res) {
-    //addition 
+    //get the request method
+    console.log(req.route.method);
     
-    //subtraction 
+    //if get method is used
+    query = req.query;
+    console.log(query);
     
-    //multiplication 
+    // if post method is used. 
+    console.log(req.body);
     
-    //division  
-     
-    //res.send(req); 
     res.render('is217hw3', { title: 'IS217hw3' });
 }
