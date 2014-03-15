@@ -1,0 +1,12 @@
+#inputDisplay {
+    width: 225px;
+    height: 40px;
+    padding: 0px 5px; 
+    font-size: 145%;
+    
+}
+
+button {
+    width: 60px;
+    height: 40px; 
+}
