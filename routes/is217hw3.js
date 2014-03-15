@@ -18,3 +18,14 @@ exports.index = function(req, res) {
     
     res.render('is217hw3', { title: 'IS217hw3' });
 }
+
+//parse the string and return the responce. 
+exports.calc = function(req, res) {
+    
+    console.log(req.route.method);
+    
+    console.log(req.body);
+    
+    res.write("Responce Test");
+    res.end(); 
+}
