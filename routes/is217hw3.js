@@ -25,7 +25,8 @@ exports.calc = function(req, res) {
     console.log(req.route.method);
     
     console.log(req.body);
-    
-    res.write("Responce Test");
+    //split the string and push the numeric values on the stack. 
+    //create a stack. 
+    res.write("0");
     res.end(); 
 }
