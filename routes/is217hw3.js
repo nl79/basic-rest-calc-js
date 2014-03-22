@@ -26,6 +26,9 @@ exports.calc = function(req, res) {
     
     console.log(req.body);
     
-    res.write("Responce Test");
+    var input = res.body['q'];
+    //build a stack and parse the query string.
+    
+    res.write("Input: " + req.body['q']);
     res.end(); 
 }

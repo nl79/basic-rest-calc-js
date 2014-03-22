@@ -114,7 +114,6 @@ function calculate() {
     //set the post header. 
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     
-    alert(qString); 
     //send the data 
     xmlhttp.send(qString);
 
