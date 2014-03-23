@@ -25,8 +25,16 @@ exports.calc = function(req, res) {
     console.log(req.route.method);
     
     console.log(req.body);
+<<<<<<< HEAD
     //split the string and push the numeric values on the stack. 
     //create a stack. 
     res.write("0");
+=======
+    
+    var input = res.body['q'];
+    //build a stack and parse the query string.
+    
+    res.write("Input: " + req.body['q']);
+>>>>>>> 342566247632cd4ee7869b9ab14aa13e3303c1df
     res.end(); 
 }
