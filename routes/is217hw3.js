@@ -3,7 +3,7 @@
  */
 
 //import the calculator module and print out some results.
-//require('../javascripts/lib/calculator.js'); 
+require('../lib/calculator.js'); 
 
 exports.index = function(req, res) {
     //get the request method
@@ -26,51 +26,17 @@ exports.calc = function(req, res) {
     
     console.log(req.body);
 
-    var input = req.body['q'] ? req.body['q'] : ""; 
-    //split the string and push the numeric values on one stack, and operators on another.
+    var input = req.body['q'] ? req.body['q'] : "";
+    var result = null; 
     
     if (input && input.length > 3) {
-        var numArr = new Array();
-        var opArr = new Array();
-        
-        
-        //last slice point
-        var last = 0;
-        //store the number
-        var num;
-        //store the operator
-        var op;
-        
-        for(var i = 0; i < input.length; i++) {
-            console.log(input.charAt(i));
-            //if not a number is encountered, create a substring from the last point
-            //to the character. 
-            if (isNaN(input.charAt(i))) {
-                //create a substring for the number
-                num = input.substring(last, i)
-                numArr.push(num);
-                
-                //create a substring for the operator
-                op = input.substring(i, i+1); 
-                opArr.push(op);
-                
-                //set last to i
-                last = i+1; 
-               
-            }
-        }
-        
-        //get the last number
-        num = input.substring(last); 
-        numArr.push(num); 
-        
-        console.log(numArr);
-        console.log(opArr); 
+        //call the calc method of the calculator object. 
+        result = calculator.calc(input);  
     }
     
 
     
     
-    res.write(req.body['q']);
+    res.write(result);
     res.end(); 
 }
