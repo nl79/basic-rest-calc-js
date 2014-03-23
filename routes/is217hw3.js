@@ -22,21 +22,22 @@ exports.index = function(req, res) {
 //parse the string and return the responce. 
 exports.calc = function(req, res) {
     
+    /*
     console.log(req.route.method);
     
     console.log(req.body);
-
+    */
     var input = req.body['q'] ? req.body['q'] : "";
-    var result = null; 
+    var result = ""; 
     
-    if (input && input.length > 3) {
+    if (input && input.length >= 3) {
         //call the calc method of the calculator object. 
         result = calculator.calc(input);  
     }
     
 
+    console.log(result); 
     
-    
-    res.write(result);
+    res.write(String(result));
     res.end(); 
 }
