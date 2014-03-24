@@ -44,7 +44,7 @@ test("calculate() - Decimal", function() {
     stop(); 
     calculate();
     start(); 
-    QUnit.equal($('inputDisplay').value, "3", "Adding" );
+    QUnit.equal($('inputDisplay').value, "3", "Adding");
     
     //subtraction 
     $('inputDisplay').value = "1-1.5";
@@ -52,7 +52,7 @@ test("calculate() - Decimal", function() {
     stop(); 
     calculate();
     start(); 
-    QUnit.equal($('inputDisplay').value, "-0.5", "Subtracting" );
+    QUnit.equal($('inputDisplay').value, "-0.5", "Subtracting");
     
     //Multiplication
     $('inputDisplay').value = "2.5*2.5";
@@ -60,7 +60,7 @@ test("calculate() - Decimal", function() {
     stop(); 
     calculate();
     start(); 
-    QUnit.equal($('inputDisplay').value, "6.25", "Multiplication" );
+    QUnit.equal($('inputDisplay').value, "6.25", "Multiplication");
     
     //Division 
     $('inputDisplay').value = "10.5/2.5";
@@ -68,6 +68,26 @@ test("calculate() - Decimal", function() {
     stop(); 
     calculate();
     start(); 
-    QUnit.equal($('inputDisplay').value, "4.2", "Multiplication" );
+    QUnit.equal($('inputDisplay').value, "4.2", "Multiplication");
    
+});
+
+test("calculate() - Arithmetic Strings", function() {
+    
+    //addition
+    $('inputDisplay').value = "1+3/3+4*2";
+    //call the calculate method.
+    stop(); 
+    calculate();
+    start(); 
+    QUnit.equal($('inputDisplay').value, "10", "Test String 1");
+    
+    //subtraction 
+    $('inputDisplay').value = "-2*2/43+22+2";
+    //call the calculate method.
+    stop(); 
+    calculate();
+    start(); 
+    QUnit.equal($('inputDisplay').value, "23.906976744186046", "Test String 2");
+    
 });
