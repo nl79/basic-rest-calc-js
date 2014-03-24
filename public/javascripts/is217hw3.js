@@ -109,7 +109,7 @@ function calculate() {
     }
       
     //open the connection
-    xmlhttp.open("POST","/is217hw3/calc",true);
+    xmlhttp.open("POST","/is217hw3/calc",false);
     
     //set the post header. 
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
