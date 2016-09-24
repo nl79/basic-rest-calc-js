@@ -10,7 +10,7 @@ var http = require('http');
 var path = require('path');
 
 //is217hw3
-var is217hw3 = require('./routes/is217hw3'); 
+var calculate = require('./routes/calculate');
 
 
 var app = express();
@@ -35,10 +35,10 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 //is217hw3 page
-app.get('/is217hw3', is217hw3.index);
-app.get('/is217hw3/calc' ,is217hw3.calc); 
-app.post('/is217hw3', is217hw3.index);
-app.post('/is217hw3/calc', is217hw3.calc); 
+app.get('/calculate', calculate.index);
+app.get('/calculate/calc' ,calculate.calc);
+app.post('/calculate', calculate.index);
+app.post('/calculate/calc', calculate.calc);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
