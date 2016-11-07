@@ -9,7 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
-//is217hw3
+// Calculator.
 var calculate = require('./routes/calculate');
 
 
@@ -34,7 +34,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-//is217hw3 page
+// Routes page
 app.get('/calculate', calculate.index);
 app.get('/calculate/calc' ,calculate.calc);
 app.post('/calculate', calculate.index);
